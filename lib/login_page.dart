@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:softprog/home_page.dart';
 import 'package:softprog/signup.dart';
 
-import 'home_page.dart';
-
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController email = TextEditingController();
+  TextEditingController pass = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

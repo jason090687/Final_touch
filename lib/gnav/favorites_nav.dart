@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:softprog/gnav/Booking_nav.dart';
-import 'package:softprog/gnav/chats_nav.dart';
-import 'package:softprog/gnav/profile.dart';
-import 'package:softprog/home_page.dart';
 
 class MyItem {
   String title;
@@ -16,14 +11,12 @@ class MyItem {
       this.isFavorite = false});
 }
 
-class LikesScreen extends StatefulWidget {
-  const LikesScreen({super.key});
-
+class FavoritePage extends StatefulWidget {
   @override
-  State<LikesScreen> createState() => _LikesScreenState();
+  _FavoritePageState createState() => _FavoritePageState();
 }
 
-class _LikesScreenState extends State<LikesScreen> {
+class _FavoritePageState extends State<FavoritePage> {
   List<MyItem> _favorites = [];
 
   @override
@@ -98,72 +91,6 @@ class _LikesScreenState extends State<LikesScreen> {
                   );
                 },
               ),
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
-          child: GNav(
-            activeColor: Colors.blue,
-            tabBackgroundColor: Color.fromARGB(255, 167, 207, 240),
-            padding: EdgeInsets.all(8),
-            gap: 8,
-            tabs: [
-              GButton(
-                icon: Icons.home_outlined,
-                text: "Home",
-                onPressed: () {
-                  // Navigate to the Home screen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
-                  );
-                },
-              ),
-              GButton(
-                icon: Icons.favorite_border,
-                text: 'Likes',
-                onPressed: () {
-                  // Replace the current screen with the LikesScreen
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => LikesScreen()),
-                  );
-                },
-              ),
-              GButton(
-                icon: Icons.bookmark_border,
-                text: 'My Booking',
-                onPressed: () {
-                  // Navigate to the My Booking screen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyBookingScreen()),
-                  );
-                },
-              ),
-              GButton(
-                icon: Icons.chat_bubble_outline,
-                text: 'Chats',
-                onPressed: () {
-                  // Navigate to the Chats screen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ChatsScreen()),
-                  );
-                },
-              ),
-              GButton(
-                icon: Icons.person_2_outlined,
-                text: 'Profile',
-                onPressed: () {
-                  // Navigate to the Profile screen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ProfileScreen()),
-                  );
-                },
-              ),
-            ], // Add the missing screens as needed
-          ),
-        ),
       ),
     );
   }

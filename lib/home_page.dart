@@ -3,7 +3,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:softprog/checkin_page.dart';
 import 'package:softprog/components/aminities_tile.dart';
-import 'package:softprog/components/boarding_list.dart';
+import 'package:softprog/components/boardgreed.dart';
 import 'package:softprog/components/boarding_tile.dart';
 import 'package:softprog/details_page.dart';
 import 'package:softprog/search_page.dart';
@@ -17,55 +17,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   DateTime selectedDate = DateTime.now();
-
-  final List<BoardingHouse> boardingHouses = [
-    BoardingHouse(
-      imageUrl: 'assets/images/Rectangle 33.png',
-      discount: '10% OFF',
-      rating: '4.5',
-      name: 'Aling Pauline B.H',
-      location: 'CDO Lapasan',
-      price: '₱2,000 - ₱3,500 /Month',
-    ),
-
-    BoardingHouse(
-      imageUrl: 'assets/images/Rectangle 53.png',
-      discount: '8% OFF',
-      rating: '4.8',
-      name: 'Grae B.H',
-      location: 'CDO Bulua',
-      price: '₱1,000 - ₱2,000 /Month',
-    ),
-    BoardingHouse(
-      imageUrl: 'assets/images/Rectangle 77.png',
-      discount: '11% OFF',
-      rating: '4.0',
-      name: 'Jason Pauline B.H',
-      location: 'CDO Molugan',
-      price: '₱500 - ₱1,000 /Month',
-    ),
-    // Add more BoardingHouse instances as needed
-  ];
-
-  final List<Amenity> amenities = [
-    Amenity(
-      imgPath: 'assets/images/Rectangle 60.png',
-      aminity: 'Electric fan',
-      internet: 'Fast Wifi',
-    ),
-
-    Amenity(
-      imgPath: 'assets/images/Rectangle 60.png',
-      aminity: 'Electric fan',
-      internet: 'Fast Wifi',
-    ),
-    Amenity(
-      imgPath: 'assets/images/Rectangle 60.png',
-      aminity: 'Electric fan',
-      internet: 'Fast Wifi',
-    ),
-    // Add more Amenity instances as needed
-  ];
 
   void navigatorBoardingDetails(int index) {
     Navigator.push(
@@ -276,37 +227,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-            ),
-          ),
-          bottomNavigationBar: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
-            child: GNav(
-              activeColor: Colors.blue,
-              tabBackgroundColor: Color.fromARGB(255, 167, 207, 240),
-              padding: EdgeInsets.all(8),
-              gap: 8,
-              tabs: [
-                GButton(
-                  icon: Icons.home_outlined,
-                  text: "Home",
-                ),
-                GButton(
-                  icon: Icons.favorite_border,
-                  text: 'Likes',
-                ),
-                GButton(
-                  icon: Icons.bookmark_border,
-                  text: 'My Booking',
-                ),
-                GButton(
-                  icon: Icons.chat_bubble_outline,
-                  text: 'Chats',
-                ),
-                GButton(
-                  icon: Icons.person_2_outlined,
-                  text: 'Profile',
-                ),
-              ],
             ),
           ),
         ),
