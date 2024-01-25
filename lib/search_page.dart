@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:softprog/home_page.dart';
+import 'package:softprog/fundation_page.dart';
 
 class MySearchPage extends StatelessWidget {
   const MySearchPage({Key? key});
@@ -134,7 +134,7 @@ class _FilterWidgetState extends State<FilterWidget> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => MyHomePage()),
                 );
               },
               child: const Text('Apply',
