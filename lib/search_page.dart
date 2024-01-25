@@ -33,138 +33,132 @@ class _FilterWidgetState extends State<FilterWidget> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(height: 40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => HomePage()),
-                      );
-                    },
-                    child: const Text('Cancel',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                  const Text('Filter',
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    null;
+                  },
+                  child: const Text('Cancel',
                       style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 20,
+                          color: Colors.black,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold)),
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        activeSortButton = '';
-                        selectedRating = 0;
-                        _priceRangeValues = const RangeValues(500, 4000);
-                      });
-                      print('Reset button pressed');
-                    },
-                    child: const Text('Reset',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Sort By',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      )),
-                  SizedBox(height: 10),
-                  Column(
-                    children: [
-                      TextField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                          hintStyle: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.normal),
-                          hintText: '₱ Price Lower to Higher',
-                          suffixIcon: Icon(Icons.arrow_drop_down, size: 40),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(
-                  height:
-                      20), // Increased vertical spacing between "Price Lower to Higher" and "Price Higher to Lower"
-
-              _buildRatingsSection(),
-              const SizedBox(height: 30),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text('Price Ranges',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                  RangeSlider(
-                    values: _priceRangeValues,
-                    min: 500,
-                    max: 4000,
-                    divisions: 36,
-                    onChanged: (RangeValues values) {
-                      setState(() => _priceRangeValues = values);
-                      print(
-                          'Price range slider changed: ${values.start} - ${values.end}');
-                    },
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    'Selected Range: ₱${_priceRangeValues.start.toInt()} - ₱${_priceRangeValues.end.toInt()}',
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PaymentPage()),
-                  );
-                },
-                child: const Text('Apply',
+                ),
+                const Text('Filter',
                     style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white)),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 60),
-                  primary: Colors.blue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(35),
-                  ),
+                        color: Colors.blue,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold)),
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      activeSortButton = '';
+                      selectedRating = 0;
+                      _priceRangeValues = const RangeValues(500, 4000);
+                    });
+                    print('Reset button pressed');
+                  },
+                  child: const Text('Reset',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold)),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Sort By',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    )),
+                SizedBox(height: 10),
+                Column(
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                        hintStyle: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.normal),
+                        hintText: '₱ Price Lower to Higher',
+                        suffixIcon: Icon(Icons.arrow_drop_down, size: 40),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(
+                height:
+                    20), // Increased vertical spacing between "Price Lower to Higher" and "Price Higher to Lower"
+
+            _buildRatingsSection(),
+            const SizedBox(height: 30),
+
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Price Ranges',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                RangeSlider(
+                  values: _priceRangeValues,
+                  min: 500,
+                  max: 4000,
+                  divisions: 36,
+                  onChanged: (RangeValues values) {
+                    setState(() => _priceRangeValues = values);
+                    print(
+                        'Price range slider changed: ${values.start} - ${values.end}');
+                  },
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  'Selected Range: ₱${_priceRangeValues.start.toInt()} - ₱${_priceRangeValues.end.toInt()}',
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PaymentPage()),
+                );
+              },
+              child: const Text('Apply',
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white)),
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 60),
+                primary: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(35),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -192,7 +186,7 @@ class _FilterWidgetState extends State<FilterWidget> {
   Widget _buildRatingsSection() {
     return Container(
       padding: const EdgeInsets.symmetric(
-          vertical: 30, horizontal: 3), // Increased vertical spacing
+          vertical: 20, horizontal: 3), // Increased vertical spacing
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -227,7 +221,7 @@ class _FilterWidgetState extends State<FilterWidget> {
               color: Colors.yellow, size: 18), // Increased size of stars
           const SizedBox(height: 1),
           Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 6),
             child: Text(
               number.toString(),
               style: TextStyle(
@@ -241,4 +235,25 @@ class _FilterWidgetState extends State<FilterWidget> {
       ),
     );
   }
+}
+
+Future<Future<bool?>> showExitConfirmationDialog(BuildContext context) async {
+  return showDialog<bool>(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        title: Text('Are you sure you want to leave?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text('No'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text('Yes'),
+          ),
+        ],
+      );
+    },
+  );
 }

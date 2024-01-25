@@ -22,7 +22,7 @@ class AminitiesTile extends StatelessWidget {
               offset: const Offset(0, 5),
             )
           ]),
-      width: 200,
+      width: 250,
       margin: const EdgeInsets.all(8),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -31,38 +31,42 @@ class AminitiesTile extends StatelessWidget {
             Image.asset(
               amenity.imgPath,
               height: 150,
-              width: 250,
+              width: 2500,
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 10),
             Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                    color: Colors.blue,
+                    border: Border.all(color: Colors.lightBlue),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Text(
                     amenity.internet,
                     style: const TextStyle(
-                      fontSize: 10,
-                      color: Colors.blue,
+                      fontSize: 12,
+                      color: Colors.black,
                     ),
                   ),
                 ),
                 const SizedBox(width: 15),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                    color: Colors.blue,
+                    border: Border.all(color: Colors.lightBlue),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Text(
                     amenity.aminity,
                     style: const TextStyle(
-                      fontSize: 10,
-                      color: Colors.blue,
+                      fontSize: 12,
+                      color: Colors.black,
                     ),
                   ),
                 ),

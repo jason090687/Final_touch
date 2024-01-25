@@ -27,3 +27,26 @@ class Amenity {
     required this.internet,
   });
 }
+
+class BoardingHouseDescription {
+  final String imagePath;
+  final String bhname;
+  final String bhdiscount;
+  final String bhrating;
+  final String reviews;
+  final String bhlocation;
+  final String description;
+  final String contactname;
+  final String bhprice;
+
+  BoardingHouseDescription(
+      {required this.imagePath,
+      required this.bhdiscount,
+      required this.bhlocation,
+      required this.bhname,
+      required this.bhprice,
+      required this.bhrating,
+      required this.contactname,
+      required this.description,
+      required this.reviews});
+}
