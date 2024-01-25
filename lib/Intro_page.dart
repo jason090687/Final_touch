@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:softprog/signup.dart';
+import 'package:softprog/starting_page.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
@@ -13,25 +13,26 @@ class FirstPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RichText(
-              text: TextSpan(
+              text: const TextSpan(
                 text: "CDO",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 48.0,
+                  fontSize: 40.0,
                   fontWeight: FontWeight.bold,
                 ),
                 children: [
                   TextSpan(
                     text: "seek",
                     style: TextStyle(
+                      fontSize: 40,
                       color: Color(0xFFfdcd25),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 20.0),
-            Text(
+            const SizedBox(height: 20.0),
+            const Text(
               "Discover your ideal boarding haven with\nCDOseek - your shortcut to comfortable living!",
               style: TextStyle(
                 color: Colors.white,
@@ -39,20 +40,23 @@ class FirstPage extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpScreen()),
+                  MaterialPageRoute(builder: (context) => const MyStart()),
                 );
               },
               // Replace with navigation code later
-              child: Text("Find your haven"),
+              child: const Text(
+                "Find your Haven",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 onPrimary: Colors.blue,
-                minimumSize: Size(150.0, 50.0),
+                minimumSize: const Size(200.0, 60.0),
               ),
             ),
           ],

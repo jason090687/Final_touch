@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:softprog/home_page.dart';
-import 'package:softprog/payment_page.dart';
 
 class MySearchPage extends StatelessWidget {
-  const MySearchPage({super.key});
+  const MySearchPage({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,6 @@ class FilterWidget extends StatefulWidget {
 class _FilterWidgetState extends State<FilterWidget> {
   String activeSortButton = '';
   int selectedRating = 0;
-
   RangeValues _priceRangeValues = const RangeValues(500, 4000);
 
   @override
@@ -43,7 +41,7 @@ class _FilterWidgetState extends State<FilterWidget> {
               children: [
                 TextButton(
                   onPressed: () {
-                    null;
+                    Navigator.of(context).pop(); // Close the current screen
                   },
                   child: const Text('Cancel',
                       style: TextStyle(
@@ -74,7 +72,6 @@ class _FilterWidgetState extends State<FilterWidget> {
               ],
             ),
             const SizedBox(height: 20),
-
             const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -104,13 +101,9 @@ class _FilterWidgetState extends State<FilterWidget> {
                 ),
               ],
             ),
-            const SizedBox(
-                height:
-                    20), // Increased vertical spacing between "Price Lower to Higher" and "Price Higher to Lower"
-
+            const SizedBox(height: 20),
             _buildRatingsSection(),
             const SizedBox(height: 30),
-
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -137,12 +130,11 @@ class _FilterWidgetState extends State<FilterWidget> {
               ],
             ),
             const SizedBox(height: 20),
-
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PaymentPage()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                 );
               },
               child: const Text('Apply',
@@ -235,25 +227,4 @@ class _FilterWidgetState extends State<FilterWidget> {
       ),
     );
   }
-}
-
-Future<Future<bool?>> showExitConfirmationDialog(BuildContext context) async {
-  return showDialog<bool>(
-    context: context,
-    builder: (context) {
-      return AlertDialog(
-        title: Text('Are you sure you want to leave?'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(false),
-            child: Text('No'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(true),
-            child: Text('Yes'),
-          ),
-        ],
-      );
-    },
-  );
 }

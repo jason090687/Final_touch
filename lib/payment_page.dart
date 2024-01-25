@@ -45,6 +45,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       Text(
                         'Total Price:',
                         style: TextStyle(
+                          color: Colors.white,
                           fontSize: 20,
                         ),
                       ),
@@ -52,14 +53,9 @@ class _PaymentPageState extends State<PaymentPage> {
                       Text(
                         '₱ 3,150.00',
                         style: TextStyle(
-                            fontSize: 36, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        '(5% VAT included)',
-                        style: TextStyle(
-                            fontSize: 15,
-                            color: Color.fromARGB(255, 124, 124, 124)),
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),

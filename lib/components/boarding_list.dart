@@ -28,7 +28,7 @@ class Amenity {
   });
 }
 
-class BoardingHouseDescription {
+class Board {
   final String imagePath;
   final String bhname;
   final String bhdiscount;
@@ -39,7 +39,7 @@ class BoardingHouseDescription {
   final String contactname;
   final String bhprice;
 
-  BoardingHouseDescription(
+  Board(
       {required this.imagePath,
       required this.bhdiscount,
       required this.bhlocation,

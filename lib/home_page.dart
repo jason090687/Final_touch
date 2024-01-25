@@ -5,7 +5,7 @@ import 'package:softprog/checkin_page.dart';
 import 'package:softprog/components/aminities_tile.dart';
 import 'package:softprog/components/boarding_list.dart';
 import 'package:softprog/components/boarding_tile.dart';
-import 'package:softprog/details_tile.dart';
+import 'package:softprog/details_page.dart';
 import 'package:softprog/search_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => MyDetailsPage(),
+        builder: (context) => const BoardDetailsScreen(),
       ),
     );
   }
@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                     child: const Text(
-                      'Cagayan de Oro Lapasan',
+                      'Select Boarding House Place!',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -217,25 +217,16 @@ class _HomePageState extends State<HomePage> {
                         child: IconButton(
                           icon: Image.asset(
                             'assets/images/filter.png',
+                            color: Colors.white,
                             width: 35,
                             height: 30,
                             fit: BoxFit.contain,
                           ),
                           onPressed: () {
-                            showModalBottomSheet(
-                              context: context,
-                              isScrollControlled: true,
-                              builder: (context) {
-                                return const ClipRRect(
-                                  borderRadius: BorderRadius.vertical(
-                                      top: Radius.circular(20)),
-                                  child: SizedBox(
-                                    width: 500,
-                                    height: 600,
-                                    child: MySearchPage(),
-                                  ),
-                                );
-                              },
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MySearchPage()),
                             );
                           },
                         ),
