@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:softprog/home_page.dart';
 
-class Myprofile extends StatefulWidget {
-  const Myprofile({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
-  State<Myprofile> createState() => _MyprofileState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _MyprofileState extends State<Myprofile> {
+class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController ageController = TextEditingController();
   TextEditingController sexController = TextEditingController();
   bool showAgeTextField = true;
@@ -77,8 +78,10 @@ class _MyprofileState extends State<Myprofile> {
             ),
             TextButton(
               onPressed: () {
-                // Implement logout functionality here
-                Navigator.of(context).pop(); // Close the dialog
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
               },
               child: Text('Yes'),
             ),
