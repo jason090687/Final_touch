@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:softprog/bookingsummary.dart';
+import 'package:softprog/fundation_page.dart';
 
 class BoardDetailsScreen extends StatelessWidget {
   const BoardDetailsScreen({Key? key}) : super(key: key);
@@ -8,6 +9,16 @@ class BoardDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const MyHomePage()),
+            );
+          },
+        ),
         title: const Text(
           'Boarding House Details',
           style: TextStyle(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:softprog/fundation_page.dart';
 import 'package:softprog/home_page.dart';
 import 'package:softprog/signup.dart';
 
@@ -125,7 +126,7 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

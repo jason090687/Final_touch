@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'package:softprog/fundation_page.dart';
 
 class MyEndPage extends StatelessWidget {
   const MyEndPage({super.key});
@@ -50,7 +50,7 @@ class MyEndPage extends StatelessWidget {
                 // Replace with your navigation logic
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => MyHomePage()),
                 );
               },
               style: ElevatedButton.styleFrom(
